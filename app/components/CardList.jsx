@@ -8,9 +8,9 @@ class CardList extends React.Component {
     }
 
     addCardToDeck(card) {
-        var alreadyInDeck = false;
-        var countIndex = 0;
-        var costIndex = 0;
+        var alreadyInDeck = false
+        var countIndex = 0
+        var costIndex = 0
         var deckCards = this.state.deckCards
 
         if(this.state.deckLength < 30) {

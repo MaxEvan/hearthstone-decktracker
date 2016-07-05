@@ -8,7 +8,7 @@ class Deck extends React.Component {
     }
 
     removeCardFromDeck(card) {
-        var index = 0;
+        var index = 0
         var deckCards = this.state.deckCards
 
         deckCards.forEach((item, i) => {

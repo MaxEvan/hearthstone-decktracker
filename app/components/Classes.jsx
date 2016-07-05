@@ -7,8 +7,8 @@ class Classes extends React.Component {
     }
 
     render() {
-        var classes = ['druid', 'hunter', 'mage', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
-                    .map(item => <img className="heroClass" src={'img/' + item + '.png'} />)
+        var arr = ['druid', 'hunter', 'mage', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
+        var classes = arr.map(item => <img className="heroClass" src={'img/' + item + '.png'} />)
 
         return  <div>
                     {classes}
