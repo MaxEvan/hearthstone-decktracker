@@ -36,8 +36,8 @@ class Deck extends React.Component {
         })
     }
 
-    svaeDeck() {
-
+    saveDeck() {
+        console.log('save Deck!')
     }
 
     render() {
@@ -56,7 +56,7 @@ class Deck extends React.Component {
         })
     	return  <div className="col-sm-12 col-md-3 deck">
                     <h3>DECK {this.props.length}/30</h3>
-                    <button className="btn btn-danger" onClick={this.clearAllCards.bind(this.props.root)}>Clear All</button>
+                    <button className="btn btn-danger" onClick={this.clearAllCards.bind(root)}>Clear All</button>
                     &nbsp;
                     <button className="btn btn-success" onClick={this.saveDeck}>Save Deck</button>
                     {cards}
