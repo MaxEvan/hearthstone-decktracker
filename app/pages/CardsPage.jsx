@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import CardList from '../components/CardList.jsx'
 import Deck from '../components/Deck.jsx'
 import Filters from '../components/Filters.jsx'
+import Classes from '../components/Classes.jsx'
 
 import App from '../classes/App.js'
 
@@ -22,7 +23,7 @@ class CardsPage extends React.Component {
             listCards: cardsss,
             deckCards: [],
             deckLength: 0,
-            filters: []
+            filters: {}
         }
     }
 
@@ -44,7 +45,7 @@ class CardsPage extends React.Component {
 
     render() {
     	return <div className="container">
-                    <h1>Hearthstone Web Deck Maker</h1>
+                    <Classes/>
                     <Filters/>
 		    		<CardList
                         root={this}
