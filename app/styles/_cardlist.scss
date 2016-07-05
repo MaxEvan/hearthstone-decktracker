@@ -1,0 +1,14 @@
+.cardList {
+	.listCard {
+		height: 300px;
+		position: relative;
+		opacity: 0.9;
+		background-size: 100% 115%;
+		background-position: 0px -28px;
+		background-repeat: no-repeat;
+		&:hover {
+		    opacity: 1;
+		    cursor: pointer;
+		}
+	}
+}
