@@ -1,9 +1,9 @@
 import React from 'react'
 
-class Card extends React.Component {
+class ListCard extends React.Component {
     constructor(props) {
         super(props)
-        this.displayName = 'Card'
+        this.displayName = 'ListCard'
     }
 
     render() {
@@ -14,4 +14,4 @@ class Card extends React.Component {
     }
 }
 
-export default Card
+export default ListCard
