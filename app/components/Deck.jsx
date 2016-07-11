@@ -56,13 +56,15 @@ class Deck extends React.Component {
         })
     	return  <div className="col-sm-12 col-md-3 deck">
                     <h3>
-                        DECK {this.props.length}/30
+                        {this.props.deckName}
                         &nbsp;
-                        <img className="deckClassImg" src={'img/' + this.props.deckClass + '.png'}/>
+                        {this.props.length}/30
+                        &nbsp;
+                        <img className="deckClassImg" src={'img/' + this.props.deckClass + '.png'} title={this.props.deckClass}/>
                     </h3>
                     <button className="btn btn-danger" onClick={this.clearAllCards.bind(root)}>Clear All</button>
                     &nbsp;
-                    <button className="btn btn-success" onClick={this.saveDeck}>Save Deck</button>
+                    <button className="btn btn-success" onClick={this.saveDeck.bind(this.props.root)}>Save Deck</button>
                     {cards}
     			</div>
 

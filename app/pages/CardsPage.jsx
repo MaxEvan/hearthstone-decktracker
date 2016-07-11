@@ -56,6 +56,7 @@ class CardsPage extends React.Component {
                         cards={this.state.deckCards}
                         length={this.state.deckLength}
                         deckClass={this.state.deckClass}
+                        deckName={this.state.deckName}
                     />                      
 		    	</div>
     }
