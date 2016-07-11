@@ -23,7 +23,7 @@ class CardsPage extends React.Component {
             listCards: cardsss,
             deckCards: [],
             deckLength: 0,
-            deckClass: 'druid',
+            deckClass: 'Druid',
             filters: {}
         }
     }
