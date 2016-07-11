@@ -23,30 +23,30 @@ class CardsPage extends React.Component {
             listCards: cardsss,
             deckCards: [],
             deckLength: 0,
+            deckClass: 'druid',
             filters: {}
         }
     }
 
-    // componentDidMount() {
-    //     var cards = []
-    //     App.getAllCards().then((data) => {
-    //         for(var i in data) {
-    //             data[i].forEach((card) => {
-    //                 if(card.cost){
-    //                     cards.push(card)
-    //                 }
-    //             })
-    //         }
-    //         this.setState({
-    //             listCards: cardsss
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        var cards = []
+        App.getAllCards().then((data) => {
+            for(var i in data) {
+                data[i].forEach((card) => {
+                    if(card.cost && card.collectible){
+                        cards.push(card)
+                    }
+                })
+            }
+            this.setState({
+                cards: cards
+            })
+        })
+    }
 
     render() {
     	return <div className="container">
-                    <Classes/>
-                    <Filters/>
+                    <Filters root={this}/>
 		    		<CardList
                         root={this}
                         cards={this.state.listCards}
@@ -55,6 +55,7 @@ class CardsPage extends React.Component {
                         root={this} 
                         cards={this.state.deckCards}
                         length={this.state.deckLength}
+                        deckClass={this.state.deckClass}
                     />                      
 		    	</div>
     }

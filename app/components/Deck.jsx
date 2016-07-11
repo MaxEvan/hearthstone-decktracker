@@ -55,7 +55,11 @@ class Deck extends React.Component {
 
         })
     	return  <div className="col-sm-12 col-md-3 deck">
-                    <h3>DECK {this.props.length}/30</h3>
+                    <h3>
+                        DECK {this.props.length}/30
+                        &nbsp;
+                        <img className="deckClassImg" src={'img/' + this.props.deckClass + '.png'}/>
+                    </h3>
                     <button className="btn btn-danger" onClick={this.clearAllCards.bind(root)}>Clear All</button>
                     &nbsp;
                     <button className="btn btn-success" onClick={this.saveDeck}>Save Deck</button>
