@@ -33,7 +33,7 @@ class CardsPage extends React.Component {
         App.getAllCards().then((data) => {
             for(var i in data) {
                 data[i].forEach((card) => {
-                    if(card.cost && card.collectible){
+                    if(typeof card.cost != 'undefined' && card.collectible){
                         cards.push(card)
                     }
                 })
