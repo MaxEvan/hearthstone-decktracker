@@ -24,6 +24,7 @@ class CardsPage extends React.Component {
             deckCards: [],
             deckLength: 0,
             deckClass: 'Druid',
+            deckName: 'Alakazam',
             filters: {}
         }
     }
