@@ -8,7 +8,8 @@ const PATHS = {
 
 const common = {
 	entry: {
-		index: PATHS.cardsPage
+		editDeck: PATHS.cardsPage,
+		editDeck: PATHS.cardsPage
 	},
 	output: {
 		path: PATHS.public,
