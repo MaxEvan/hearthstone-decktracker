@@ -37,7 +37,15 @@ class Deck extends React.Component {
     }
 
     saveDeck() {
-        console.log('save Deck!')
+        var decks = JSON.parse(localStorage.Decks || "{}")
+        decks[this.state.deckName] = {
+            deckLength : this.state.deckLength,
+            deckClass : this.state.deckClass,
+            deckCards : this.state.deckCards
+        }
+
+        localStorage.setItem('Decks', JSON.stringify(decks))
+        localStorage.setItem('Current', this.state.deckName)
     }
 
     render() {
