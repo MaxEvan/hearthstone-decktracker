@@ -1,5 +1,5 @@
 import React from 'react'
-import ListCard from './ListCard.jsx'
+import ListCard from './listCard.jsx'
 
 class CardList extends React.Component {
     constructor(props) {

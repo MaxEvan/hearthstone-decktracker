@@ -2,14 +2,13 @@ const merge = require('webpack-merge')
 const validate = require('webpack-validator')
 
 const PATHS = {
-	cardsPage: './app/pages/CardsPage.jsx',
+	editDeckPage: './app/pages/editDeckPage.jsx',
 	public: 'public/'
 }
 
 const common = {
 	entry: {
-		editDeck: PATHS.cardsPage,
-		editDeck: PATHS.cardsPage
+		editDeckPage: PATHS.editDeckPage
 	},
 	output: {
 		path: PATHS.public,

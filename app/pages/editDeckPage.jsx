@@ -1,30 +1,37 @@
 import {render} from 'react-dom'
 import React from 'react'
 
-import '../styles/_main.scss'
+import '../styles/_editDeckPage.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import CardList from '../components/CardList.jsx'
-import Deck from '../components/Deck.jsx'
-import Filters from '../components/Filters.jsx'
-import Classes from '../components/Classes.jsx'
+import CardList from '../components/cardList.jsx'
+import Deck from '../components/deck.jsx'
+import Filters from '../components/filters.jsx'
+import Classes from '../components/classes.jsx'
 
-import App from '../classes/App.js'
+import App from '../classes/app.js'
 
 // Data Mock !!!
 import cardsss from './cardsMock.js'
 
-class CardsPage extends React.Component {
+class EditDeckPage extends React.Component {
     constructor(props) {
         super(props)
-        this.displayName = 'CardsPage'
+        this.displayName = 'EditDeckPage'
+
+        var current = localStorage.Current
+
+// Make sure that when the deck is created on the other page, that the infos are all saved so that this page receives the right properties
+
+        var deck = JSON.parse(localStorage.Decks)[current]
+        
         this.state = {
             cards: [],
             listCards: cardsss,
-            deckCards: [],
-            deckLength: 0,
-            deckClass: 'Druid',
-            deckName: 'Alakazam',
+            deckCards: deck.deckCards,
+            deckLength: deck.deckLength,
+            deckClass: deck.deckClass,
+            deckName: current,
             filters: {}
         }
     }
@@ -63,4 +70,4 @@ class CardsPage extends React.Component {
     }
 }
 
-render(<CardsPage/>, document.getElementById('app'))
+render(<EditDeckPage />, document.getElementById('app'))
