@@ -3,8 +3,8 @@ const validate = require('webpack-validator')
 
 const common = {
     entry: {
-        editDeckPage: './app/pages/editDeckPage.jsx',
-        decksPage: './app/pages/decksPage.jsx'
+        editDeck: './app/pages/editDeck.jsx',
+        decks: './app/pages/decks.jsx'
     },
     output: {
         path: 'public/',

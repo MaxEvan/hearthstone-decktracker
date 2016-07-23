@@ -1,20 +1,20 @@
 import {render} from 'react-dom'
 import React from 'react'
 
-import '../styles/_decksPage.scss'
 import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/pages/_decks.scss'
 
 import App from '../classes/app.js'
 
-class DecksPage extends React.Component {
+class Decks extends React.Component {
     constructor(props) {
         super(props)
-        this.displayName = 'DecksPage'
+        this.displayName = 'Decks'
     }
 
     render() {
-    	return <div></div>
+    	return <div>DECKS PAGE</div>
     }
 }
 
-render(<DecksPage />, document.getElementById('app'))
+render(<Decks />, document.getElementById('app'))

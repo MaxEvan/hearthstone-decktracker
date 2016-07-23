@@ -1,8 +1,8 @@
 import {render} from 'react-dom'
 import React from 'react'
 
-import '../styles/_editDeckPage.scss'
 import 'bootstrap/dist/css/bootstrap.css'
+import '../styles/pages/_editDeck.scss'
 
 import CardList from '../components/cardList.jsx'
 import Deck from '../components/deck.jsx'
@@ -14,10 +14,10 @@ import App from '../classes/app.js'
 // Data Mock !!!
 import cardsss from './cardsMock.js'
 
-class EditDeckPage extends React.Component {
+class EditDeck extends React.Component {
     constructor(props) {
         super(props)
-        this.displayName = 'EditDeckPage'
+        this.displayName = 'EditDeck'
 
         var current = localStorage.Current
 
@@ -70,4 +70,4 @@ class EditDeckPage extends React.Component {
     }
 }
 
-render(<EditDeckPage />, document.getElementById('app'))
+render(<EditDeck />, document.getElementById('app'))
