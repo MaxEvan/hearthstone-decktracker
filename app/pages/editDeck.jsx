@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/pages/_editDeck.scss'
 
 import CardList from '../components/cardList.jsx'
-import Deck from '../components/deck.jsx'
+import Deck from '../components/sideBarDeck.jsx'
 import Filters from '../components/filters.jsx'
 import Classes from '../components/classes.jsx'
 
@@ -18,13 +18,15 @@ class EditDeck extends React.Component {
     constructor(props) {
         super(props)
         this.displayName = 'EditDeck'
+        var deck;
 
-        var current = localStorage.Current
+        if(typeof localStorage.Decks !== "undefined") {
+            var current = localStorage.Current
+            deck = JSON.parse(localStorage.Decks)[current]
+        } else {
+            deck = {deckCards: [], deckLength: 0, deckClass: 'mage'};
+        }
 
-// Make sure that when the deck is created on the other page, that the infos are all saved so that this page receives the right properties
-
-        var deck = JSON.parse(localStorage.Decks)[current]
-        
         this.state = {
             cards: [],
             listCards: cardsss,
@@ -53,20 +55,20 @@ class EditDeck extends React.Component {
     }
 
     render() {
-    	return <div className="container">
+        return <div className="container">
                     <Filters root={this}/>
-		    		<CardList
+                    <CardList
                         root={this}
                         cards={this.state.listCards}
                     />
-		    		<Deck 
-                        root={this} 
+                    <Deck
+                        root={this}
                         cards={this.state.deckCards}
                         length={this.state.deckLength}
                         deckClass={this.state.deckClass}
                         deckName={this.state.deckName}
-                    />                      
-		    	</div>
+                    />
+                </div>
     }
 }
 

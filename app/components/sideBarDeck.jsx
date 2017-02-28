@@ -1,7 +1,7 @@
 import React from 'react'
 import DeckCard from './deckCard.jsx'
 
-class Deck extends React.Component {
+export default class Deck extends React.Component {
     constructor(props) {
         super(props)
         this.displayName = 'Deck'
@@ -24,8 +24,8 @@ class Deck extends React.Component {
         }
 
         this.setState({
-           deckCards: deckCards,
-           deckLength: this.state.deckLength - 1
+            deckCards: deckCards,
+            deckLength: this.state.deckLength - 1
         })
     }
 
@@ -37,7 +37,7 @@ class Deck extends React.Component {
     }
 
     saveDeck() {
-        var decks = JSON.parse(localStorage.Decks || "{}")
+        var decks = JSON.parse(localStorage.Decks || '{}')
         decks[this.state.deckName] = {
             deckLength : this.state.deckLength,
             deckClass : this.state.deckClass,
@@ -62,21 +62,19 @@ class Deck extends React.Component {
                     />
 
         })
-    	return  <div className="col-sm-12 col-md-3 deck">
+        return  <div className="col-sm-12 col-md-3 sideBarDeck">
                     <h3>
                         {this.props.deckName}
                         &nbsp;
                         {this.props.length}/30
                         &nbsp;
-                        <img className="deckClassImg" src={'img/' + this.props.deckClass + '.png'} title={this.props.deckClass}/>
+                        <img className="sideBarDeck-ClassImg" src={'img/' + this.props.deckClass + '.png'} title={this.props.deckClass}/>
                     </h3>
                     <button className="btn btn-danger" onClick={this.clearAllCards.bind(root)}>Clear All</button>
                     &nbsp;
                     <button className="btn btn-success" onClick={this.saveDeck.bind(this.props.root)}>Save Deck</button>
                     {cards}
-    			</div>
+                </div>
 
     }
 }
-
-export default Deck

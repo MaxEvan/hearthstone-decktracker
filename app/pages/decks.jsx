@@ -13,7 +13,9 @@ class Decks extends React.Component {
     }
 
     render() {
-    	return <div>DECKS PAGE</div>
+        return  <div className="container">
+                    
+                </div>
     }
 }
 

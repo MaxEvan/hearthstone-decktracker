@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Filters extends React.Component {
+export default class Filters extends React.Component {
     constructor(props) {
         super(props)
         this.displayName = 'Filters'
@@ -63,28 +63,26 @@ class Filters extends React.Component {
     }
 
     render() {
-    	var costs = ['all',0,1,2,3,4,5,6,7,8,9,10].map( (item,index) => <option key={index} value={item}>{item}</option>)
-        return 	<form onSubmit={this.searchCards.bind(this)}>
-        			<div className="col-md-3">
-	        			<span>Name</span>
-        				<input className="form-control" style={{color: "black"}} value={this.state.name} type="text" onChange={this.changeName.bind(this)}/>
-        			</div>
-        			<div className="col-md-1">
-	        			<span>Cost</span>
-	        			<select className="form-control" name="cost" value={this.state.cost} onChange={this.changeCost.bind(this)}>
-	        				{costs}
-	        			</select>
-	        		</div>
-        			<div className="col-md-1">
-        				<br/>
-	        			<button type="submit" className="btn btn-default">Search</button>
-	        		</div>
+        var costs = ['all',0,1,2,3,4,5,6,7,8,9,10].map( (item,index) => <option key={index} value={item}>{item}</option>)
+        return  <form onSubmit={this.searchCards.bind(this)}>
+                    <div className="col-md-3">
+                        <span>Name</span>
+                        <input className="form-control" style={{color: 'black'}} value={this.state.name} type="text" onChange={this.changeName.bind(this)}/>
+                    </div>
+                    <div className="col-md-1">
+                        <span>Cost</span>
+                        <select className="form-control" name="cost" value={this.state.cost} onChange={this.changeCost.bind(this)}>
+                            {costs}
+                        </select>
+                    </div>
+                    <div className="col-md-1">
+                        <br/>
+                        <button type="submit" className="btn btn-default">Search</button>
+                    </div>
                     <div className="col-md-1">
                         <br/>
                         <button className="btn btn-warning" onClick={this.clearFilters.bind(this)}>Clear Filters</button>
                     </div>
-        		</form>
+                </form>
     }
 }
-
-export default Filters

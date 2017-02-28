@@ -2,13 +2,9 @@ import $ from 'jquery'
 
 class App {
     getAllCards() {
-        return new Promise(function (fulfill, reject){
+        return new Promise(function (fulfill/*, reject*/){
             $.getJSON( '/cards.json', (data) => {
-                try {
-                    fulfill(data)
-                } catch (ex) {
-                    reject(ex)
-                }
+                fulfill(data)
             })
         })
     }

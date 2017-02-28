@@ -1,7 +1,7 @@
 import React from 'react'
 import ListCard from './listCard.jsx'
 
-class CardList extends React.Component {
+export default class CardList extends React.Component {
     constructor(props) {
         super(props)
         this.displayName = 'CardList'
@@ -43,10 +43,8 @@ class CardList extends React.Component {
             return <ListCard key={index} info={item} addCardToDeck={this.addCardToDeck.bind(this.props.root, item)}/>
         })
 
-    	return  <div className="col-sm-12 col-md-9 cardList">
+        return  <div className="col-sm-12 col-md-9 cardList">
                     {cards}
                 </div>
     }
 }
-
-export default CardList

@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Classes extends React.Component {
+export default class Classes extends React.Component {
     constructor(props) {
         super(props)
         this.displayName = 'Classes'
@@ -15,5 +15,3 @@ class Classes extends React.Component {
                 </div>
     }
 }
-
-export default Classes
